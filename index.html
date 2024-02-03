@@ -1,0 +1,51 @@
+<!-- @format -->
+
+<!-- TODO: Make Clean Code and Enhance it and Change the Mode based on the device mode and change the button icon -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Light Mode</title>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+		<link
+			rel="shortcut icon"
+			href="./sun.svg"
+			type="image/x-icon" />
+		<script
+			src="./main.js"
+			defer></script>
+	</head>
+	<body>
+		<div class="clock-container">
+			<div class="clockwise top"></div>
+			<div class="clockwise right"></div>
+			<div class="clockwise bottom"></div>
+			<div class="clockwise left"></div>
+			<div class="clock-center-l1"></div>
+			<div class="clock-center-l2"></div>
+			<div class="clock-face">
+				<div class="hand hour-hand"></div>
+				<div class="hand minute-hand"></div>
+				<div class="hand second-hand"></div>
+			</div>
+		</div>
+		<div class="date-container">
+			<div class="am-pm"></div>
+			<div class="time"></div>
+			<div class="date"></div>
+		</div>
+		<div class="mode">
+			<button
+				type="button"
+				class="button">
+				<img
+					src="./moon.svg"
+					alt="dark mode"
+					class="image" />
+			</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,225 @@
+/** @format */
+/* CSS VARIABLES */
+:root {
+	--base-clr: #2d2d6b;
+	--bg-light: #ececf3;
+	--text-light: #12123b;
+	--sm-text-light: #505167;
+	--hand-light: #4f4f64;
+	--sign-light: #bebecc;
+
+	--bg-dark: #25252d;
+	--text-dark: #f1f1f4;
+	--sm-text-dark: #b1b2c0;
+	--hand-dark: #b2b2c1;
+	--sign-dark: #585868;
+}
+/* Base Style  */
+html {
+	text-align: center;
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	font-size: 2rem;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: var(--bg-light);
+	transition: all 0.5s ease-in-out;
+}
+
+.dark {
+	background-color: var(--bg-dark);
+	transition: all 0.5s ease-in-out;
+}
+
+.clock-container {
+	width: 30rem;
+	height: 30rem;
+	border: 1px solid rgba(46, 46, 107, 0.2);
+	border-radius: 50%;
+	margin: 75px auto;
+	position: relative;
+	padding: 2rem;
+	box-shadow: inset 10px 10px 20px 2px rgba(46, 46, 107, 0.1),
+		10px 10px 20px 1px rgba(46, 46, 107, 0.1);
+}
+.clockwise {
+	position: absolute;
+	height: 2px;
+	width: 8%;
+	background-color: var(--sign-light);
+	border-radius: 999px;
+}
+
+.dark-clockWise {
+	color: var(--sign-dark);
+	transition: all 0.5s ease-in-out;
+}
+.clockwise.top {
+	top: 8%;
+	left: 50%;
+	transform: translate(-50%) rotate(90deg);
+}
+.clockwise.bottom {
+	bottom: 8%;
+	left: 50%;
+	transform: translate(-50%) rotate(90deg);
+}
+.clockwise.right {
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.clockwise.left {
+	left: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.clock-center-l1 {
+	position: absolute;
+	height: 12px;
+	width: 12px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--base-clr);
+	border-radius: 50%;
+	z-index: 21;
+}
+.clock-center-l2 {
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	background-color: var(--bg-light);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 20;
+	transition: all ease-in-out;
+	transition-delay: 0.15s;
+}
+.dark-clock-center-l2 {
+	background-color: var(--bg-dark);
+	transition: all ease-in-out;
+	transition-delay: 0.15s;
+}
+.clock-face {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform: translateY(-3px);
+}
+.hand {
+	height: 4px;
+	background: var(--hand-light);
+	border-radius: 9999px;
+	position: absolute;
+	top: 50%;
+	transform-origin: 100%;
+	transform: rotate(90deg);
+	transition: all 0.05s;
+	transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.dark-hand {
+	background-color: var(--hand-dark);
+	transition: all 0.5s ease-in-out;
+}
+.second-hand {
+	width: 36%;
+	height: 3px;
+	left: 14%;
+	top: 50%;
+	background-color: var(--base-clr);
+	z-index: 10;
+}
+.second-hand::after {
+	content: '';
+	position: absolute;
+	width: 15%;
+	height: 3px;
+	right: -20px;
+	background-color: var(--base-clr);
+	z-index: 10;
+}
+.minute-hand {
+	width: 35%;
+	left: 15%;
+}
+.hour-hand {
+	width: 30%;
+	left: 20%;
+}
+.date-container {
+	display: flex;
+	flex-direction: column;
+}
+.am-pm {
+	display: flex;
+	justify-content: end;
+	margin-right: -25px;
+	font-size: 12px;
+	font-weight: bold;
+	color: var(--sm-text-light);
+}
+.time {
+	font-size: 48px;
+	color: var(--text-light);
+	font-weight: bold;
+}
+.dark-time {
+	color: var(--text-dark);
+	transition: all 0.5s ease-in-out;
+}
+.date {
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	color: var(--sm-text-light);
+}
+
+.dark-sm-text {
+	color: var(--sm-text-dark);
+	transition: all 0.5s ease-in-out;
+}
+.mode {
+	position: absolute;
+	top: 5%;
+	right: 30%;
+	width: 28px;
+	height: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: inset 1px 1px 5px 0px rgba(65, 105, 225, 0.1),
+		1px 1px 5px 0px rgba(65, 105, 225, 0.1);
+}
+.button {
+	outline: none;
+	color: var(--base-clr);
+	border: none;
+	border-radius: 999px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	transition: all 0.5s ease-in-out;
+	transition-delay: 1s;
+	background-color: transparent;
+}
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	cursor: pointer;
+}
